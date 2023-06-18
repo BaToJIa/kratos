@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{{ user.username }}
+
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="card dark my-lg-3 p-3" style="border-width: 3px;">
+            <h1>Профиль:</h1>
+            <p>Имя: {{ user.first_name }}</p>
+            <p>Фамилия: {{ user.last_name }} </p>
+            <p>Псевдоним: {{ user.username }}</p>
+            <p>Почта: {{ user.email }} </p>
+            <a class = "btn btn-danger rounded-pill px-3" href="{% url 'logout' %}?next={% url 'home' %}">Выйти</a>
+            <a class = "btn btn-dark mt-1 rounded-pill px-3" href="{% url 'password_change' %}">Изменить пароль</a>
+        </div>
+    </div>
+{% endblock %}

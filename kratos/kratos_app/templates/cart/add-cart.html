@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'add_item' id=component.id %}">
+    {% csrf_token %}
+    <input type="hidden" name="type" value="{{ type }}">
+    <button type="submit" class="btn btn-warning  rounded-pill px-3" value>Добавить в корзину🗑</button>
+</form>

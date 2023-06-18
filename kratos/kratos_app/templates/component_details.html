@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{component.name}}
+{% endblock %}
+
+{% block content %}
+<div class="card;" >
+    <div class="d-flex">
+        <img class="width:100px; height: 100px; image mx-auto my-2 my-sm-3 my-lg-5 p-1 " src="{{component.image.url}} "
+             alt="Что-то пошло не так...">
+
+        <div class="container px-4 mt-5">
+            <h3 class="card-title">{{component.name}}</h3>
+
+            <p class="card-text"><b>Производитель:</b> {{ component.producer }}</p>
+            <p class="card-text"><b>Год выпу<img src="/media/logo.png" , height="25px">ка:</b> {{component.release_year}}</p>
+            <p class="card-text"><b>Опи<img src="/media/logo.png" , height="25px">ание:</b> {{component.description}}</p>
+            <p class="card-text"><b>Характери<img src="/media/logo.png" , height="25px">тики:</b> {{component.characteristic}}</p>
+        </div>
+    </div>
+</div>
+
+<h5 class="card-text ms-3 "><b> <img src="/media/logo.png" , height="25px">тоимость: </b>{{ component.price }} ₽</h5>
+<div >
+    {% if user.is_authenticated %}
+    <div class="mt-1 ms-3">{% include 'cart/add-cart.html' with type='component' id=component.id %}</div>
+    {% endif %}
+    <div class="mt-1 ms-3">{% include 'favorites/add-favorite.html' with type='component' id=component.id %}</div>
+
+</div>
+{% endblock %}

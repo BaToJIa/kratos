@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'add_favorites' id=component.id %}">
+    {% csrf_token %}
+    <input type="hidden" name="type" value="{{ type }}">
+    <button type="submit" class="btn btn-dark rounded-pill px-3" value>Добавить в избранное🤍</button>
+</form>

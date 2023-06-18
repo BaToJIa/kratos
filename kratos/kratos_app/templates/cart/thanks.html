@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+
+Спасибо!
+
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="card dark my-lg-3 p-3" style="border-width: 2px;">
+            <h1 class="title-center"><img src="/media/logo.png" , height="45px">пасибо за покупку!</h1>
+            <p class="text-center">Может посмотрите что-нибудь еще?</p>
+          <a class="btn btn-dark" href="{% url 'home' %}">На главную</a>
+
+        </div>
+    </div>
+{% endblock %}

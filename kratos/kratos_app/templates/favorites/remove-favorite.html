@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'remove_favorites' id=component.id %}">
+    {% csrf_token %}
+    <input type="hidden" name="type" value="{{ type }}">
+    <button type="submit" class="btn btn-danger mt-1 rounded-pill px-3">Убрать из избранного</button>
+</form>
